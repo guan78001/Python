@@ -13,4 +13,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
 		while True:
 			data = conn.recv(1024)
 			if not data: break
-			conn.sendall(data)
+			#print('[Client]:',repr(data))
+			print('[Client]:',data.decode('utf-8'))
+			#conn.sendall(data)
+			conn.sendall(input('[Server]:').encode('utf-8'))
